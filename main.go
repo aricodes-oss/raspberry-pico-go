@@ -1,22 +1,21 @@
 package main
 
 import (
-	"blinky/worker"
-	"fmt"
+	"machine"
 	"time"
 )
 
+const SLEEP_TIME = time.Millisecond * 100
+
 func main() {
-	status := make(chan bool)
-	go worker.Work(status)
+	led := machine.GP16
+	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
 	for {
-		select {
-		case <-status:
-			break
-		default:
-			fmt.Println("Waiting...\r")
-			time.Sleep(time.Millisecond * 1)
-		}
+		led.Low()
+		time.Sleep(SLEEP_TIME)
+
+		led.High()
+		time.Sleep(SLEEP_TIME)
 	}
 }
