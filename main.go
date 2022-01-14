@@ -8,7 +8,7 @@ import (
 const SLEEP_TIME = time.Millisecond * 100
 
 func main() {
-	led := machine.GP16
+	led := machine.LED
 	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
 	for {
