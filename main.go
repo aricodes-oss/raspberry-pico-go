@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-const SLEEP_TIME = time.Millisecond * 100
+const SLEEP_TIME = time.Millisecond * 1000
 
 func main() {
 	led := machine.LED
