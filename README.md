@@ -9,9 +9,3 @@ This requires you to have `tinygo` installed. The `replace` directive inside of 
 `tinygo` has a flash command, but I was unable to get it working with a PicoProbe (detailed [here](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) in appendix A, or page 64).
 
 The Makefile instead uses [`tinygo`](https://tinygo.org/) to build the binary, and [openocd](https://github.com/raspberrypi/openocd) to flash it using the picoprobe.
-
-## Why a goroutine/module setup for an LED blinker?
-
-I wanted to see if cooperative multitasking worked in `tinygo`, as well as module resolution.
-
-It does.
